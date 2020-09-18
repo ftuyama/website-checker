@@ -1,0 +1,17 @@
+{
+    "manifest_version": 2,
+    "name": "Refresher",
+    "version": "0.0.1",
+    "content_scripts": [{
+      "matches": [
+        "https://ec-lisboa.itamaraty.gov.br/*"
+      ],
+      "js": ["jquery.min.js", "refresher.js"]
+    }],
+    "web_accessible_resources": [
+      "assets/cash1.wav"
+    ],
+    "permissions": [
+      "contextMenus"
+    ]
+  }
