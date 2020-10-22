@@ -6,7 +6,7 @@ $(document).ready(() => {
 
     // create a gain node
     var gainNode = audioCtx.createGain();
-    gainNode.gain.value = 20;
+    gainNode.gain.value = 10;
     source.connect(gainNode);
 
     // connect the gain node to an output destination
@@ -16,8 +16,13 @@ $(document).ready(() => {
     setTimeout(() => {
         var LookFor = "Não há horários disponíveis no momento. Tente novamente mais tarde!";
         if($('body:contains("' + LookFor + '")').length == 0) {
+            var LoginMessage = "Senha";
             audio.play();
-            alert("Found: " + LookFor);
+            if ($('body:contains("'+ LoginMessage + '")').length == 0) {
+                alert("Found: " + LookFor);
+            }else{
+                alert("Session Expired: Please, login again" );
+            }
         }
         else {
             location.reload();
